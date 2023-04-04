@@ -1,38 +1,83 @@
+.all{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+.single {
+   background-color: rgb(82, 82, 82);
+   border-radius: 25px;
+   margin: 20px;
+   width: 320px;
+   height: 600px;
+   border: solid rgb(80, 250, 139) 2px;
+   box-shadow: 0 0 10px 1px rgb(67, 243, 199);
+   opacity: 0.90;   
+}
+
+
+.single:hover{
+   box-shadow: 0 0 30px 4px rgb(67, 243, 199);
+   opacity: 100; 
+   transform: scale(1.03);
+}
+.img{
+   border-radius: 25px;
+   margin: 7px;
+   border: solid rgb(255, 255, 255) 3px;
+   box-shadow: 0 0 10px 2px rgb(0, 8, 67);
+}
+
+.nav{
+   background-color: rgba(9, 0, 59, 0.8);
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   opacity: 0.8;
+   
+}
+.nav:hover{
+   opacity: 1;
+   box-shadow: 0 0 15px 2px rgb(67, 243, 199);
+}
 .App {
-  text-align: center;
+   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.divSingle {
+   width: 100%;
+   height: 45%;
+   position: center;
+   color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: radial-gradient(rgba(2, 0, 135, 0.75),rgba(61, 0, 94, 0.75)), url(../img/fondo.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+button{
+   margin-top: 10px;
+   background-color: rgb(47, 47, 48);
+   color: white;
+   border-radius: 50px;
+   align-items: center;
+   box-shadow: 0 0 5px 1px rgb(0, 255, 153);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input{
+   background-color: rgb(47, 47, 48);
+   color: white;
+   border-radius: 30px;
+   align-items: center;
+   box-shadow: 0 0 5px 1px rgb(0, 255, 153);
+   margin: 10px;
+   width: 300px;
 }
