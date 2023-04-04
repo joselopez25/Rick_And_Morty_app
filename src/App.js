@@ -7,7 +7,11 @@ import axios from 'axios';
 
 function App() {
    let [characters,setCharacters] = useState([]);
-   
+   function onClose (id){
+      console.log(characters)
+      id=id.target.value
+     setCharacters(characters.filter(personaje => personaje.id !==  parseInt(id)))
+   }
    function onSearch(id) {
       id=id.target.value
       if (id>0 && id<827){
@@ -23,7 +27,7 @@ function App() {
 
       <div className='App'>
          <Nav onSearch={onSearch}/>
-         <Cards characters={characters} />
+         <Cards characters={characters} onClose={onClose}  />
       </div>
    );
 }
