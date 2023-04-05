@@ -1,7 +1,6 @@
-import SearchBar from "./SearchBar"
 import { NavLink } from "react-router-dom"
 
-export default function Nav ({onSearch}){
+export default function Nav (){
   return (
     <div className="nav">
       <button className='rout'>
@@ -10,7 +9,6 @@ export default function Nav ({onSearch}){
       <button className='rout'>
         <NavLink to='/home' className='rout' >HOME</NavLink>
       </button>
-      <SearchBar onSearch={onSearch}/>
     </div>
   )
 }

@@ -1,8 +1,13 @@
 import Card from './Card';
+import SearchBar from "./SearchBar"
 
-export default function Cards({onClose,characters}) {
+export default function Cards({onClose,characters, onSearch}) {
   return (
-  <div className='all'>
+  <div>
+    <div className='aggBar'>
+      <SearchBar onSearch={onSearch}/>
+    </div>
+    <div className='all'>
     {
       characters.map(({name,status,species,gender,origin,id, image}) => {
         return <Card 
@@ -17,5 +22,6 @@ export default function Cards({onClose,characters}) {
         onClose={onClose}/>
       })
     }
+  </div>
   </div>)
 }

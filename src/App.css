@@ -40,10 +40,18 @@
    height: 60px;
    
 }
-.nav:hover{
-   opacity: 1;
-   box-shadow: 0 0 15px 2px rgb(67, 243, 199);
+#error{
+   color: white;
+   align-items: center;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   align-items: center;
+   justify-content:center;
+   height: 500px;
+   font-size: 150%;
 }
+
 .App {
    text-align: center;
 }
@@ -64,7 +72,16 @@ body {
   background-attachment: fixed;
 }
 
-
+.aggBar{
+   background-color: rgba(9, 0, 59, 0.8);
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   align-items: center;
+   justify-content:space-evenly;
+   opacity: 0.8;
+   height: 30px;
+}
 
 .agg{
    background-color: rgb(47, 47, 48);

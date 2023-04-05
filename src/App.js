@@ -6,7 +6,8 @@ import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import About from './components/About';
 import Details from './components/Details';
-import SearchBar from './components/SearchBar';
+import Error from './components/Error';
+import { Navigate } from 'react-router-dom';
 
 
 function App() {
@@ -33,9 +34,11 @@ function App() {
       <div>
          <Nav onSearch={onSearch}/>
       <Routes>
-         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+         <Route path='/home' element={<Cards characters={characters} onClose={onClose} onSearch={onSearch}/>}/>
          <Route path='/about' element={<About/>}/>
          <Route path='/details/:id' element={<Details/>}/>
+         <Route path='/404' element={<Error/>} />
+         <Route path='*' element={<Navigate to='/404' />} />
       </Routes>
       </div>
    );
