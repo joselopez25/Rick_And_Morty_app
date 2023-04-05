@@ -3,31 +3,40 @@ import Cards from './components/Cards.jsx';
 import {useState} from "react";
 import Nav from './components/Nav';
 import axios from 'axios';
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About';
+import Details from './components/Details';
+import SearchBar from './components/SearchBar';
 
 
 function App() {
    let [characters,setCharacters] = useState([]);
    function onClose (id){
-      console.log(characters)
-      id=id.target.value
      setCharacters(characters.filter(personaje => personaje.id !==  parseInt(id)))
    }
+
    function onSearch(id) {
-      id=id.target.value
       if (id>0 && id<827){
+         for(const personaje of characters){
+            if(parseInt(id)===personaje.id){
+               return alert('YA EXISTE')} 
+         }
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          }
+         
       });
       }else { alert('NO EXISTE PERSONAJE CON ESE ID')}
-      
    }
    return (
-
-      <div className='App'>
+      <div>
          <Nav onSearch={onSearch}/>
-         <Cards characters={characters} onClose={onClose}  />
+      <Routes>
+         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+         <Route path='/about' element={<About/>}/>
+         <Route path='/details/:id' element={<Details/>}/>
+      </Routes>
       </div>
    );
 }

@@ -35,8 +35,9 @@
    flex-wrap: wrap;
    flex-direction: row;
    align-items: center;
-   justify-content: center;
+   justify-content:space-evenly;
    opacity: 0.8;
+   height: 60px;
    
 }
 .nav:hover{
@@ -52,6 +53,8 @@
    height: 45%;
    position: center;
    color: white;
+   align-items: center;
+   text-align: center;
 }
 
 body {
@@ -63,21 +66,30 @@ body {
 
 
 
-button{
-   margin-top: 10px;
+.agg{
    background-color: rgb(47, 47, 48);
    color: white;
    border-radius: 50px;
    align-items: center;
    box-shadow: 0 0 5px 1px rgb(0, 255, 153);
+   text-decoration: none;
 }
 
 input{
-   background-color: rgb(47, 47, 48);
+   background-color: rgb(124, 124, 124);
    color: white;
-   border-radius: 30px;
    align-items: center;
    box-shadow: 0 0 5px 1px rgb(0, 255, 153);
    margin: 10px;
-   width: 300px;
+   border: none;
+}
+
+.rout{
+   background-color: rgb(75, 75, 75);
+   color: rgb(255, 255, 255);
+   align-items: center;
+   text-decoration: none;
+   border: none;
+   width: 25%;
+   height: 100%;
 }
