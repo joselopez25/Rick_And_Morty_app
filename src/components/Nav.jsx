@@ -9,6 +9,9 @@ export default function Nav (){
       <button className='rout'>
         <NavLink to='/home' className='rout' >HOME</NavLink>
       </button>
+      <button className='rout'>
+        <NavLink to='/' className='rout' >LOG OUT</NavLink>
+      </button>
     </div>
   )
 }
