@@ -1,13 +1,13 @@
 import './App.css';
-import Cards from './components/Cards.jsx';
+import Cards from './components/cards/Cards.jsx';
 import {useState, useEffect } from "react";
-import Nav from './components/Nav';
+import Nav from './components/nav/Nav';
 import axios from 'axios';
-import About from './components/About';
-import Details from './components/Details';
-import Error from './components/Error';
-import Principal from './components/Principal';
-import {useLocation, useNavigate,Navigate,Route, Routes} from 'react-router-dom';
+import About from './components/About/About';
+import Details from './components/details/Details';
+import Error from './components/error/Error';
+import Principal from './components/principal/Principal';
+import {useLocation, useNavigate,Route, Routes} from 'react-router-dom';
 
 
 
@@ -26,6 +26,10 @@ function App() {
          setAccess(true);
          navigate('/home')
       }
+   }
+   const logout = ()=>{
+      setAccess(false)
+      navigate('/')
    }
    useEffect(() => {
       !access && navigate('/');
@@ -48,17 +52,15 @@ function App() {
       });
       }else { alert('NO EXISTE PERSONAJE CON ESE ID')}
    }
- 
    return (
       <div>
-         { path!=='/'? <Nav onSearch={onSearch}/> : null}    
+         { path!=='/'? <Nav onSearch={onSearch} logout={logout}/> : null}    
       <Routes>
-         <Route path='' element={<Principal login={login}/>} Nav={false}/>
+         <Route path='/' element={<Principal login={login}/>} Nav={false}/>
          <Route path='/home' element={<Cards characters={characters} onClose={onClose} onSearch={onSearch} />}/>
          <Route path='/about' element={<About/>}/>
          <Route path='/details/:id' element={<Details/>} />
-         <Route path='/404' element={<Error/>} />
-         <Route path='*' element={<Navigate to='/404' />} />
+         <Route path='*' element={<Error/>}/>
       </Routes>
       </div>
    );

@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useParams} from "react-router-dom";
 import { useState,useEffect} from "react";
-
-
 const Details = ()=>{
+  let episode = 0;
+  let location = '';
+  let origen = '';
+
   let [character,setCharacter]=useState([]);
   const params = (useParams())
   const id = params.id
@@ -13,20 +15,17 @@ const Details = ()=>{
     axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(({ data }) => {
        if (data.name) {
           setCharacter(data);
-          
        }
-       
     });
     return setCharacter({});
  }, [id]);
-  let episode = 0;
-  let location = '';
-  let origen = '';
+  
   if(character.episode){
     episode = character.episode.length
     location = character.location.name
     origen = character.origin.name
   }
+  
   return (
     <div className='divSingle'>
       <h3>{`Nombre: ${character?.name}`}</h3>

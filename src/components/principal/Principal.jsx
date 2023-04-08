@@ -1,6 +1,6 @@
-import imagen from '../img/principal.png'
+import imagen from '../../img/principal.png'
 import { NavLink } from 'react-router-dom';
-import Form from './Forms';
+import Form from '../form/Forms';
 const Principal = ({login})=>{
   return (
     <div className='form'>

@@ -1,4 +1,4 @@
-import imagen from '../img/principal.png'
+import imagen from '../../img/principal.png'
 
 const Error = ()=>{
     return (

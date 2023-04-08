@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 
-export default function Nav (){
+export default function Nav ({logout}){
   return (
     <div className="nav">
       <button className='rout'>
@@ -9,8 +9,8 @@ export default function Nav (){
       <button className='rout'>
         <NavLink to='/home' className='rout' >HOME</NavLink>
       </button>
-      <button className='rout'>
-        <NavLink to='/' className='rout' >LOG OUT</NavLink>
+      <button className='rout' onClick={logout} >
+        LOG OUT
       </button>
     </div>
   )

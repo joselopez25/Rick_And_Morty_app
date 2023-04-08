@@ -1,5 +1,5 @@
-import Card from './Card';
-import SearchBar from "./SearchBar"
+import Card from "../card/Card"
+import SearchBar from "../searchbar/SearchBar"
 
 export default function Cards({onClose,characters, onSearch}) {
   return (
