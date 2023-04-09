@@ -1,0 +1,80 @@
+.form {
+  width: 280px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  position: relative;
+  max-width: 300px;
+  outline: 3px solid rgba(49, 255, 128);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+.box{
+  position: relative;
+  border-bottom:  solid 2px rgb(255, 255, 255);
+  width: 100%;
+  margin: 15px 0px;
+}
+
+.form input{
+  display: block;
+  width: 250px;
+  height: 30px;
+  border:none;
+  background: none; 
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0.2 1rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+.lbl{
+  position: absolute;
+  left: 5px;
+  top: 0;
+  pointer-events: none;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}
+
+.form input:focus + .lbl {
+  transform: translateY(-150%);
+  font-size: 16px;
+  color:  rgb(49, 255, 128);
+}
+.form input:valid + .lbl {
+  transform: translateY(-150%);
+  font-size: 16px;
+  color:  rgb(49, 255, 128);
+}
+
+
+.noValid {
+  background-color: rgb(255, 70, 70);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+.button{
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(49, 255, 128); 
+  color: rgb(23, 25, 65);
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button:disabled{
+  background-color: rgb(0, 57, 22); 
+}
