@@ -1,13 +1,14 @@
 import Card from "../card/Card"
 import SearchBar from "../searchbar/SearchBar"
+import style from './Cards.module.css'
 
 export default function Cards({onClose,characters, onSearch}) {
   return (
-  <div>
-    <div className='aggBar'>
+  <div className={style.box}>
+    <div className={style.search}>
       <SearchBar onSearch={onSearch}/>
     </div>
-    <div className='all'>
+    <div className={style.cards}>
     {
       characters.map(({name,id, image}) => {
         return <Card 
@@ -18,6 +19,6 @@ export default function Cards({onClose,characters, onSearch}) {
         onClose={onClose}/>
       })
     }
-  </div>
+     </div>
   </div>)
 }

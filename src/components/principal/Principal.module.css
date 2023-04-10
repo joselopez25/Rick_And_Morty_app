@@ -25,10 +25,11 @@
    border-radius: 10px;
    text-align: center;
    overflow: hidden;
-   margin-top: 5rem;
+   margin-top: 10rem;
+   transform: scale(1.2);
 }
  
- @media screen and (max-width: 960px ){
+ @media screen and (max-width: 920px){
    .ppal{
       width: 100%;
       height: 100%;
@@ -60,6 +61,7 @@
      border-radius: 10px;
      text-align: center;
      overflow: hidden;
+     transform: scale(1);
   }
  }
 
@@ -92,5 +94,6 @@
      border-radius: 10px;
      text-align: center;
      overflow: hidden;
+     transform: scale(1);
   }
  }

@@ -6,7 +6,7 @@ const Form =({login})=>{
   let [userData,setUserData] = useState({email: '',pass:''})
   let [errors,setErrors]=useState({email:'',pass:''})
   const handleSubmit = ()=>{
-    login(userData)
+    login(userData,setErrors,errors)
   }
   const handleChange = (event)=>{
     setUserData({...userData,

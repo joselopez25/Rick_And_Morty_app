@@ -18,7 +18,7 @@ const validate = (errors,setErrors,userData)=>{
   }
   if (userData.pass){
     if(largoPass>=5 && largoPass<10){
-      if(!/[.\d]/.test(userData.pass)){
+      if(!/.*\d+.*/.test(userData.pass)){
         setErrors({
           ...errors,
           pass: 'contraseña no valida'
