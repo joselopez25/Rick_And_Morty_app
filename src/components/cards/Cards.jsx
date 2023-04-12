@@ -10,12 +10,13 @@ export default function Cards({onClose,characters, onSearch}) {
     </div>
     <div className={style.cards}>
     {
-      characters.map(({name,id, image}) => {
+      characters.map(({name,id, image,gender}) => {
         return <Card 
         name={name}
         image={image}
         key={id}
         id={id}
+        gender={gender}
         onClose={onClose}/>
       })
     }

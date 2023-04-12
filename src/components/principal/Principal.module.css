@@ -29,7 +29,7 @@
    transform: scale(1.2);
 }
  
- @media screen and (max-width: 920px){
+ @media screen and (max-width: 1000px){
    .ppal{
       width: 100%;
       height: 100%;
@@ -41,6 +41,7 @@
       justify-content: center;
       color: rgb(255, 255, 255);
       gap: 1px;
+      margin: auto;
    }
    .form {
       margin-bottom: 10px;
@@ -54,46 +55,15 @@
      flex-wrap: wrap;
      flex-direction: row;
      align-items: center;
-     width: 90%;
+     width: 80%;
      height: 700px;
-     margin: 10% auto;
+     margin-top: 300px;
      justify-content:center;
      border-radius: 10px;
      text-align: center;
      overflow: hidden;
-     transform: scale(1);
+     transform: scale(1.2);
   }
  }
 
- @media screen and (max-width: 620px ){
-   .ppal{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: space-around;
-      color: rgb(255, 255, 255);
-   }
-   .logo{
-      margin: 10px auto;
-      width: 15rem;
-   }
-   .container {
-     background-color: rgba(29, 13, 67, 0.8);
-     display: flex;
-     flex-wrap: wrap;
-     flex-direction: row;
-     align-items: center;
-     width: 90%;
-     height: 700px;
-     margin: 10% auto;
-     justify-content:center;
-     border-radius: 10px;
-     text-align: center;
-     overflow: hidden;
-     transform: scale(1);
-  }
- }
+

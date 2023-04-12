@@ -20,7 +20,7 @@ const Form =({login})=>{
     <div>
       <form onSubmit={onSubmit} className={style.form}>
         <div className={style.box}>
-        <input type="text" name="email"  value={userData.email} onChange={handleChange} clasName={style.input}required/>
+        <input type="text" name="email"  value={userData.email} onChange={handleChange} className={style.input}required/>
         <label htmlFor="email" className={style.lbl}>Email:</label>
         </div>
         {errors.email && <p className={style.noValid}>{errors.email}</p>}

@@ -18,14 +18,17 @@ export default function Nav ({logout}){
       </div>
         <div className={` ${click ? style.navvisble : style.nav}`} >
           <div className={style.botones}>
-            <NavLink to='/about' className='rout' >
+            <NavLink to='/about' >
               <button className={style.button}>About me</button>
             </NavLink>
-            <NavLink to='/home' className='rout'>
+            <NavLink to='/home' >
               <button className={style.button}>Cards</button>
             </NavLink>
+            <NavLink to='/favorites' >
+            <button className={style.button}>Favoritos</button>
+            </NavLink>
             <NavLink to='/'>
-            <button className={style.logout} onClick={logout} >Logout <i class="fa-solid fa-right-from-bracket"></i> </button>
+            <button className={style.logout} onClick={logout} >Logout <i className="fa-solid fa-right-from-bracket"></i> </button>
             </NavLink>
           </div>
         </div>

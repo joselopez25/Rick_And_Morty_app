@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useParams} from "react-router-dom";
 import { useState,useEffect} from "react";
+import style from './Details.module.css'
 const Details = ()=>{
   let episode = 0;
   let location = '';
@@ -27,15 +28,17 @@ const Details = ()=>{
   }
   
   return (
-    <div className='divSingle'>
+    <div className={style.info}>
+      <div className={style.text}>
       <h3>{`Nombre: ${character?.name}`}</h3>
       <h3>{`Estado: ${character?.status}`}</h3>
       <h3>{`Escpecie: ${character?.species}`}</h3>
       <h3>{`Genero: ${character?.gender}`}</h3>
       <h3>Location: {location}</h3>
       <h3>Origen: {origen}</h3>
-      <img className='img' src={character?.image} alt={character?.name} />
       <h3>Aparece en {episode} episodio/s</h3>
+      </div>
+      <img className={style.img} src={character?.image} alt={character?.name} />
     </div>
          
   )

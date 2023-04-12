@@ -10,6 +10,7 @@ import Principal from './components/principal/Principal';
 import {useLocation, useNavigate,Route, Routes} from 'react-router-dom';
 import Start from './components/start/Start';
 import Particulas from './components/particulas/Particulas';
+import Favorites from './components/favorites/Favorites';
 
 function App() {
    let navigate =useNavigate();
@@ -32,14 +33,13 @@ function App() {
    }
    const logout = ()=>{
       setAccess(false)
-      navigate('/')
    }
 
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
    function onClose (id){
-     setCharacters(characters.filter(personaje => personaje.id !==  id))
+     setCharacters(characters.filter(personaje => personaje.id !==  id));
    }
 
    function onSearch(id) {
@@ -52,7 +52,6 @@ function App() {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          }
-         
       });
       }else { alert('NO EXISTE PERSONAJE CON ESE ID')}
    }
@@ -64,6 +63,7 @@ function App() {
          <Route path='/' element={<Start/>}/>
          <Route path='/start' element={<Principal login={login}/>} Nav={false}/>
          <Route path='/home' element={<Cards characters={characters} onClose={onClose} onSearch={onSearch} />}/>
+         <Route path='/favorites' element={<Favorites/>}/>
          <Route path='/about' element={<About/>}/>
          <Route path='/details/:id' element={<Details/>} />
          <Route path='*' element={<Error/>}/>
@@ -73,4 +73,4 @@ function App() {
    );
 }
 
-export default App;
+export default (App)

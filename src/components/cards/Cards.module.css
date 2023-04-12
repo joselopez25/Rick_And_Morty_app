@@ -8,15 +8,20 @@
   z-index: -1;
 }
 .cards{
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .box{
   width: 100%;
+  
 }
 @media (max-width: 1000px){
   .search {top: 220px;}
   .box{
-      margin-top: 200px;
-      width: 100%;
+    margin-top: 200px;
+    width: 100%;
   }
 }
