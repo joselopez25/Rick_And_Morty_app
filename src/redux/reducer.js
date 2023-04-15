@@ -1,8 +1,10 @@
-import { ADD_FAV,REMOVE_FAV, FILTER, ORDER} from "./action-type";
-
+import { ADD_FAV,REMOVE_FAV, FILTER, ORDER ,CLEAR, EPISODES, PERSONAJES, CLEARPER} from "./action-type";
+import { removeFav } from "./action";
 const initialState = {
   myFavorites: [],
-  allCharacters: []
+  allCharacters: [],
+  personaje: [],
+  episodes: []
 };
 
 const reducer = (state=initialState, action)=>{
@@ -16,7 +18,8 @@ const reducer = (state=initialState, action)=>{
     case REMOVE_FAV:
       return{
         ...state,
-        myFavorites: state.myFavorites.filter(character=>character.id !== action.payload)
+        myFavorites: state.myFavorites.filter(character=>character.id !== action.payload),
+        allCharacters: state.allCharacters.filter(character=>character.id !== action.payload)
       };
     case FILTER:
       if (action.payload === 'all'){
@@ -24,25 +27,54 @@ const reducer = (state=initialState, action)=>{
           ...state,
           myFavorites: state.allCharacters
         }
-      }
+      } else {
+        const allCharactersFilter = state.allCharacters.filter(character=>character.gender === action.payload)
       return{
         ...state,
-        myFavorites: state.allCharacters.filter(character=>character.gender === action.payload)
-      }
+        myFavorites: allCharactersFilter
+      }}
       case ORDER:
-        if (action.payload ==='A'){
+        const allCharactersFavCopy = [...state.allCharacters]
+        switch (action.payload){
+          case 'A':
+            return{
+              ...state,
+              myFavorites: allCharactersFavCopy.sort((a,d)=>a.id-d.id)
+            }
+          case 'D':
+            return{
+              ...state,
+              myFavorites: allCharactersFavCopy.sort((a,d)=>d.id-a.id)
+              }
+          case 'Agregados':
+            return{
+              ...state,
+              myFavorites: state.allCharacters
+            }
+          default:
+            return{...state}
+        }
+      case CLEAR:
+        return {
+          myFavorites: [],
+          allCharacters: []
+        }
+      case PERSONAJES:
         return{
           ...state,
-          myFavorites: state.allCharacters.sort((a,d)=>a.id-d.id)
+          personaje: action.payload
         }
-        }
-        if (action.payload ==='D'){
+      case EPISODES:
         return{
-        ...state,
-        myFavorites: state.allCharacters.sort((a,d)=>d.id-a.id)
-        }}
-      return{...state}        
-
+          ...state,
+          episodes: [...state.episodes, action.payload]
+        }
+      case CLEARPER:
+        return {
+          ...state,
+          episodes: [],
+          personaje: []
+        }
     default:
       return{...state};
   }

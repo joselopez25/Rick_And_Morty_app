@@ -1,12 +1,31 @@
 import Card from "../card/Card"
 import SearchBar from "../searchbar/SearchBar"
 import style from './Cards.module.css'
+import { useState} from "react"
 
-export default function Cards({onClose,characters, onSearch}) {
+
+ function Cards({onClose,characters, onSearch, clearAll, setCharacters}) {
+  const [aux,setAux]=useState(false)
+
+    const order = (event)=>{
+    if (event.target?.value === 'A'){
+      setCharacters(characters.sort((a,d)=>a.id-d.id));
+      setAux(!aux)
+       }
+    if (event.target?.value === 'D'){
+      setCharacters(characters.sort((a,d)=>d.id-a.id));
+      setAux(!aux)
+    }
+ }
+ 
   return (
   <div className={style.box}>
     <div className={style.search}>
-      <SearchBar onSearch={onSearch}/>
+      <SearchBar onSearch={onSearch} clearAll={clearAll}/>
+      <select onChange={order}>
+        <option value='A'>ID Menor-Mayor</option>
+        <option value='D'>ID Mayor-Menor</option>
+      </select>
     </div>
     <div className={style.cards}>
     {
@@ -23,3 +42,6 @@ export default function Cards({onClose,characters, onSearch}) {
      </div>
   </div>)
 }
+
+
+export default Cards;

@@ -29,7 +29,7 @@
 
 .button{
   width: 120px;
-  height: 30px;
+  height: 40px;
   border: none;
   border-radius: 10px;
   background-color: rgba(49, 255, 128,0.8); 
@@ -37,9 +37,25 @@
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
+  margin-right: 10px;
+}
+.buttonQuitar{
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 70, 70); 
+  color: rgb(23, 25, 65);
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+
 }
 
 .button:hover{
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+.buttonQuitar:hover{
   border: 2px solid rgba(255, 255, 255, 0.8);
 }
 

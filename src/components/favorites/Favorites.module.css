@@ -1,0 +1,22 @@
+.box{
+  width: 100%;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+@media (max-width: 1000px){
+  .box{
+    margin-top: 200px;
+  }
+}

@@ -7,7 +7,7 @@ import About from './components/About/About';
 import Details from './components/details/Details';
 import Error from './components/error/Error';
 import Principal from './components/principal/Principal';
-import {useLocation, useNavigate,Route, Routes} from 'react-router-dom';
+import {useLocation, useNavigate,Route, Routes, Navigate} from 'react-router-dom';
 import Start from './components/start/Start';
 import Particulas from './components/particulas/Particulas';
 import Favorites from './components/favorites/Favorites';
@@ -35,8 +35,19 @@ function App() {
       setAccess(false)
    }
 
+   /* useEffect(() => {
+      (!access &&
+        (pathname === "/start/home" || pathname === '/favorites' ||
+          pathname === "/start/about" ||
+          CONSTANTES.searchPath(pathname)) &&
+        navigate("/login"))
+        return ()=>{
+          pathname === '/login' && setCharacters([])
+        }
+    }, [access, navigate, pathname]); */
    useEffect(() => {
-      !access && navigate('/');
+      if (!access && (path==='/start' || path=== '/home' || path==='/favorites' ||path==='/about'||path=== '/details/:id')){navigate('/')}
+      return ()=>{path==='/' && setCharacters([])}
    }, [access]);
    function onClose (id){
      setCharacters(characters.filter(personaje => personaje.id !==  id));
@@ -55,18 +66,23 @@ function App() {
       });
       }else { alert('NO EXISTE PERSONAJE CON ESE ID')}
    }
+   const clearAll = ()=>{
+      setCharacters([])
+   }
+  
    return (
       <div>
          { (path==='/' || path==='/start')?  <Particulas/> : null}   
-         { (path!=='/' && path!=='/start')? <Nav onSearch={onSearch} logout={logout}/> : null}   
+         { (path!=='/' && path!=='/start' && path!=='/404')? <Nav onSearch={onSearch} logout={logout} /> : null}   
       <Routes>
          <Route path='/' element={<Start/>}/>
          <Route path='/start' element={<Principal login={login}/>} Nav={false}/>
-         <Route path='/home' element={<Cards characters={characters} onClose={onClose} onSearch={onSearch} />}/>
+         <Route path='/home' element={<Cards characters={characters} setCharacters={setCharacters} onClose={onClose} onSearch={onSearch} clearAll={clearAll}/>}/>
          <Route path='/favorites' element={<Favorites/>}/>
          <Route path='/about' element={<About/>}/>
          <Route path='/details/:id' element={<Details/>} />
-         <Route path='*' element={<Error/>}/>
+         <Route path='/404'element={<Error/>}/>
+         <Route path='*' element={<Navigate to='/404'/>}/>
       </Routes>
       <footer className='by'>By: Jose Lopez</footer>
       </div>

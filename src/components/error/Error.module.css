@@ -1,0 +1,24 @@
+.error{
+  background-color: rgba(34, 0, 156, 0.194);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 900px;
+  margin: 100px auto;
+  border-radius: 50px;
+  color: white;
+}
+.img{
+  width: 400px;
+}
+.volver{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(215, 21, 0);
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
