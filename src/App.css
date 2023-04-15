@@ -16,10 +16,10 @@ body::-webkit-scrollbar-thumb{
   border-radius: 50px;
 }
 
-.particles{
+/* .particles{
    position: relative;
    z-index: -1;
-}
+} */
 
 .by{
   position: fixed;
