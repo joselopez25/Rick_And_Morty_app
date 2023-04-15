@@ -10,7 +10,7 @@ const Start = ()=>{
     <div className={style.text1}>
     <h1 >¡Bienvenido!</h1>
     </div>
-    <h3>Encuentra toda la info de cada uno de los personajes de la serie Rick AND Morty</h3>
+    <h3> 😎 Encuentra toda la info de cada uno de los personajes de la serie Rick AND Morty 😎 </h3>
     <NavLink to='/start' className={style.link}>
       <button className={style.button}>Ingresar</button>
     </NavLink>
