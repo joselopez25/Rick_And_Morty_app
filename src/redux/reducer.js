@@ -1,5 +1,4 @@
 import { ADD_FAV,REMOVE_FAV, FILTER, ORDER ,CLEAR, EPISODES, PERSONAJES, CLEARPER} from "./action-type";
-import { removeFav } from "./action";
 const initialState = {
   myFavorites: [],
   allCharacters: [],
