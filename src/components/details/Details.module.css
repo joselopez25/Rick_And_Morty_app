@@ -1,41 +1,28 @@
 .info{
-  margin: 250px auto;
-  width: 700px;
-  height:1000px;
+  margin: 200px auto;
+  width: 500px;
+  height:730px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
+  flex-wrap: wrap;
   /* overflow: hidden; */
   position: relative;
 }
-.info:before{
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: rgba(49, 255, 128);
-  animation: animationBorder 2000ms ease-in-out infinite;
-}
-.info:after{
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: rgba(49, 255, 128);
-  animation: animationBorder1 2000ms ease-in-out infinite;
-}
+
 .text{
   width: 60%;
-  height: 350px;
-  margin: 50px;
-  border-bottom: 3px solid rgba(49, 255, 128);
+  height: 310px;
 }
 .img{
-  width: 500px;
+  width: 300px;
   border-radius: 10px;
   border: 2px solid white;
   box-shadow: 3px 3px 10px black;
+  margin-top: 30px;
 }
 .episode{
   background-color: aliceblue;
@@ -43,93 +30,3 @@
   height: 100px;
   color: white;
 }
-
-@keyframes animationBorder {
-0%{
-  left: 0;
-  bottom: 990px;
-  width: 500px;
-  height: 4px;
-}
-25%{
-  left: 690px;
-  bottom: 990px;
-  width: 500px;
-  height: 4px;
-}
-26%{
-  left: 696px;
-  bottom: 900px;
-  width: 4px;
-  height: 500px;
-}
-50%{
-  left: 696px;
-  bottom: 0px;
-  width: 4px;
-  height: 500px;
-}
-75%{
-  left: 696px;
-  bottom: 900px;
-  width: 4px;
-  height: 500px;
-}
-76%{
-  left: 696px;
-  bottom: 990px;
-  width: 500px;
-  height: 4px;
-}
-100%{
-  left: 0;
-  bottom: 990px;
-  width: 500px;
-  height: 4px;
-}
-}
-
-@keyframes animationBorder1 {
-  0%{
-  left: 0%;
-  bottom: 490px;
-  width: 4px;
-  height: 500px;
-  }
-  25%{
-  left: 0%;
-  bottom: -500px;
-  width: 4px;
-  height: 500px;
-  }
-  26%{
-  left: -100px;
-  bottom: 0px;
-  width: 500px;
-  height: 4px;
-  }
-  50%{
-    left: 400px;
-    bottom: 0px;
-    width: 500px;
-    height: 4px;
-  }
-  75%{
-    left: -500px;
-    bottom: 0px;
-    width: 500px;
-    height: 4px;
-  }
-  76%{
-    left: 0;
-    bottom: -290px;
-    width: 4px;
-    height: 500px;
-  }
-  100%{
-    left: 0%;
-    bottom: 700px;
-    width: 4px;
-    height: 500px;
-  }
-  }

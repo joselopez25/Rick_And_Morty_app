@@ -11,15 +11,15 @@ const Episodes = ()=>{
   useEffect(()=>{
     dispatch(getPerson(id))
   return ()=>dispatch(clearper())
-  },[id,caps.id])
+  },[id,caps.id, dispatch])
   return (
     <div>
       {
-        caps.map(episode=>
+        caps?.map(episode=>
           <div>
-            <h4>Nombre: {episode.name}</h4>
-            <h4>Dia de emision: {episode.air_date}</h4>
-            <h4>Sesion y episodio: {episode.episode}</h4>
+            <h4>Nombre: {episode?.name}</h4>
+            <h4>Dia de emision: {episode?.air_date}</h4>
+            <h4>Sesion y episodio: {episode?.episode}</h4>
           </div>
         )
       }

@@ -23,21 +23,20 @@ const Favorites = ({myFavorites, removeFav})=>{
   }
   return (
     <div className={style.box}>
-      <div className={style.filter}>
-
-        <select onChange={handleOrder}>
-          <option value="Agregados">Agregados</option>
-          <option value='A'>ID Menor-Mayor</option>
-          <option value='D'>ID Mayor-Menor</option>
+      <div className={style.selectbox}>
+        <select onChange={handleOrder} className={style.select}>
+          <option className={style.option} value="Agregados">Agregados</option>
+          <option className={style.option} value='A'>ID Menor-Mayor</option>
+          <option className={style.option} value='D'>ID Mayor-Menor</option>
         </select>
-        <select onChange={handleFilter}>
-          <option value='all'>All</option>
-          <option value='Male'>Male</option>
-          <option value='Female'>Female</option>
-          <option value="Genderless">Genderless</option>
-          <option value="unknown">unknown</option>
+        <select onChange={handleFilter} className={style.select}>
+          <option className={style.option} value='all'>All</option>
+          <option className={style.option} value='Male'>Male</option>
+          <option className={style.option} value='Female'>Female</option>
+          <option className={style.option} value="Genderless">Genderless</option>
+          <option className={style.option} value="unknown">unknown</option>
         </select>
-        <button onClick={clearFav}>LIMPIAR FAVORITOS</button>
+        <button className={style.buttonQuitar} onClick={clearFav}>LIMPIAR FAVORITOS</button>
       </div>
       <div className={style.cards}>
         {

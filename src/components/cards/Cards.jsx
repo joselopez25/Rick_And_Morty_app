@@ -22,10 +22,13 @@ import { useState} from "react"
   <div className={style.box}>
     <div className={style.search}>
       <SearchBar onSearch={onSearch} clearAll={clearAll}/>
-      <select onChange={order}>
-        <option value='A'>ID Menor-Mayor</option>
-        <option value='D'>ID Mayor-Menor</option>
-      </select>
+      <div className={style.selectbox}>
+        <p>Filtrar segun su ID:  </p>
+        <select onChange={order} className={style.select} >
+          <option value='A' className={style.option}>ID Menor-Mayor</option>
+          <option value='D' className={style.option}>ID Mayor-Menor</option>
+        </select>
+      </div>
     </div>
     <div className={style.cards}>
     {

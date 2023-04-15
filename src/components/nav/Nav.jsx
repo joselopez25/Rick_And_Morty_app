@@ -4,6 +4,7 @@ import imagen from '../../img/principal.png'
 import { useState } from "react"
 
 export default function Nav ({logout}){
+  const mediaqueryList = window.matchMedia("(max-width:1000px)");
   const [click,setClick]=useState(false);
   const handleClick= ()=>{
     setClick(!click);
@@ -16,15 +17,15 @@ export default function Nav ({logout}){
         <img src={imagen} alt='LogoApp' className={style.img}/>
       </NavLink>
       </div>
-        <div className={` ${click ? style.navvisble : style.nav}`} >
+        <div className={` ${mediaqueryList.matches && click ? style.navvisble : style.nav}`} >
           <div className={style.botones}>
-            <NavLink to='/about' >
+            <NavLink to='/about' onClick={handleClick}>
               <button className={style.button}>About me</button>
             </NavLink>
-            <NavLink to='/home' >
+            <NavLink to='/home' onClick={handleClick}>
               <button className={style.button}>Cards</button>
             </NavLink>
-            <NavLink to='/favorites' >
+            <NavLink to='/favorites'onClick={handleClick} >
             <button className={style.button}>Favoritos</button>
             </NavLink>
             <NavLink to='/'>

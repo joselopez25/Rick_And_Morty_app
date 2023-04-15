@@ -69,7 +69,7 @@
 
 @media (max-width:1000px){
   .input{
-  width: 50vw;
+  width: 180px;
   height: 40px;
   }
   .button{
@@ -79,6 +79,13 @@
   }
   .text {
     font-size: 18px;
+  }
+  .box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
 }

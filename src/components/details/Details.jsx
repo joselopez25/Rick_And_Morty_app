@@ -24,26 +24,27 @@ const Details = ()=>{
        }
     });
     return setCharacter({});
- }, [personaje, id]);
+ }, [personaje, id, dispatch]);
   if(character.episode){
     episode = character.episode.length
     location = character.location.name
     origen = character.origin.name
   }
   return (
-    <div className={style.info}>
-     
-      <div className={style.text}>
-      <h3>{`Nombre: ${character?.name}`}</h3>
-      <h3>{`Estado: ${character?.status}`}</h3>
-      <h3>{`Escpecie: ${character?.species}`}</h3>
-      <h3>{`Genero: ${character?.gender}`}</h3>
-      <h3>Location: {location}</h3>
-      <h3>Origen: {origen}</h3>
-      <h3>Aparece en {episode} episodio/s</h3>
+    <div>
+      <div className={style.info}>
+        <div className={style.text}>
+          <h3>{`Nombre: ${character?.name}`}</h3>
+          <h3>{`Estado: ${character?.status}`}</h3>
+          <h3>{`Escpecie: ${character?.species}`}</h3>
+          <h3>{`Genero: ${character?.gender}`}</h3>
+          <h3>Location: {location}</h3>
+          <h3>Origen: {origen}</h3>
+          <h3>Aparece en {episode} episodio/s</h3>
+        </div>
+        <img className={style.img} src={character?.image} alt={character?.name} />
       </div>
-      <img className={style.img} src={character?.image} alt={character?.name} />
-      <Episodes id={id}/>
+        <Episodes id={id}/>
     </div>
          
   )

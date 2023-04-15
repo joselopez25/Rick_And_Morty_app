@@ -13,7 +13,7 @@ import Particulas from './components/particulas/Particulas';
 import Favorites from './components/favorites/Favorites';
 
 function App() {
-   let navigate =useNavigate();
+   const navigate =useNavigate();
    let location = useLocation();
    let path= location.pathname;
    let [access,setAccess]=useState(false);
@@ -46,7 +46,7 @@ function App() {
         }
     }, [access, navigate, pathname]); */
    useEffect(() => {
-      if (!access && (path==='/start' || path=== '/home' || path==='/favorites' ||path==='/about'||path=== '/details/:id')){navigate('/')}
+      if (access===false && (path==='/start' || path==='/home' || path==='/favorites' ||path==='/about'||path==='/details/:id')){navigate('/')}
       return ()=>{path==='/' && setCharacters([])}
    }, [access]);
    function onClose (id){

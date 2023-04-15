@@ -18,14 +18,14 @@
    flex-wrap: wrap;
    flex-direction: row;
    align-items: center;
-   width: 90%;
+   width: 80%;
    height: 700px;
    margin: 10% auto;
    justify-content:center;
    border-radius: 10px;
    text-align: center;
    overflow: hidden;
-   margin-top: 10rem;
+   margin-top: 100px;
    transform: scale(1.2);
 }
  
@@ -57,7 +57,7 @@
      align-items: center;
      width: 80%;
      height: 700px;
-     margin-top: 300px;
+     margin-top: 100px;
      justify-content:center;
      border-radius: 10px;
      text-align: center;
