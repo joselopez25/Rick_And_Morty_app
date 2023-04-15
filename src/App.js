@@ -72,7 +72,7 @@ function App() {
   
    return (
       <div>
-         { (path==='/' || path==='/start')?  <Particulas/> : null}   
+         {/* { (path==='/' || path==='/start')?  <Particulas/> : null}    */}
          { (path!=='/' && path!=='/start' && path!=='/404')? <Nav onSearch={onSearch} logout={logout} /> : null}   
       <Routes>
          <Route path='/' element={<Start/>}/>
