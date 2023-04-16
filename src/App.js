@@ -34,17 +34,6 @@ function App() {
    const logout = ()=>{
       setAccess(false)
    }
-
-   /* useEffect(() => {
-      (!access &&
-        (pathname === "/start/home" || pathname === '/favorites' ||
-          pathname === "/start/about" ||
-          CONSTANTES.searchPath(pathname)) &&
-        navigate("/login"))
-        return ()=>{
-          pathname === '/login' && setCharacters([])
-        }
-    }, [access, navigate, pathname]); */
    useEffect(() => {
       if (access===false && (path==='/start' || path==='/home' || path==='/favorites' ||path==='/about'||path==='/details/:id')){navigate('/')}
       return ()=>{path==='/' && setCharacters([])}
