@@ -39,8 +39,8 @@ const Favorites = ({myFavorites, removeFav})=>{
         <button className={style.buttonQuitar} onClick={clearFav}>LIMPIAR FAVORITOS</button>
       </div>
       <div className={style.cards}>
-        {
-          myFavorites?.map((props) => {
+        { 
+            myFavorites?.map((props) => {
             return(
             <Card
             name={props.name}

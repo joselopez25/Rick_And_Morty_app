@@ -17,10 +17,10 @@ function Card(props) {
   }
   useEffect(() => {
     props?.myFavorites?.forEach((fav) => {
-       if (fav.id === props.id) {
+        if (fav.id === props.id) {
           setIsFav(true);
-       }
-    });
+        }
+    })
  }, [props.myFavorites,props.id]);
   return (
   <div className={style.card}>

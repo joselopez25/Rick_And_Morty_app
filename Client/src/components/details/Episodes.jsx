@@ -1,16 +1,19 @@
 import {getPerson, clearper } from "../../redux/action";
 import {useSelector, useDispatch} from "react-redux";
 import { useEffect} from "react";
+import { useParams} from "react-router-dom";
 import style from './Episodes.module.css'
 
-const Episodes = ({id})=>{
+const Episodes = ()=>{
+  const params = (useParams())
+  const id = params?.id
   let numero = 1;
   const dispatch = useDispatch()
   const caps = useSelector(state=> state.episodes)
   useEffect(()=>{
-    dispatch(getPerson(id))
+    dispatch(getPerson(id? id: null))
   return ()=>dispatch(clearper())
-  },[id,caps.id, dispatch])
+  },[caps.id, dispatch])
   return (
     <div className={style.box}>
       <div className={style.top} >

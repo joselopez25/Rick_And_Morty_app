@@ -45,6 +45,7 @@ export const removeFav = (id) => {
   };
 };
 
+
 export const filterCards = (gender)=>{
   return{
     type: FILTER,
@@ -63,21 +64,31 @@ export const clear = ()=>{
   return {
     type: CLEAR
   }
-}
+};
+
 
 export const getPerson = (id)=>{
   const URL_BASE = "http://localhost:3001/rickandmorty/character";
-  return function(dispatch){
-    fetch(`${URL_BASE}/${id}`).then(res=>res.json())
-    .then(data=>dispatch({type: PERSONAJES, payload:data}))
-  }
+  return async (dispatch) => {
+    try {
+      if(id){
+        const {data} = await axios(`${URL_BASE}/${id}`)
+          return dispatch({
+             type: PERSONAJES,
+             payload: data,
+       }); 
+      }
+    } catch (error){
+      console.log("error")
+    }
+  };
 }
 
 export const getCap = (episodes)=>{
-  return function(dispatch){
+  return async function(dispatch){
     for (let i = 0; i<episodes?.length;i++){
       console.log(episodes[i])
-      fetch(episodes[i]).then(res=>res.json())
+      await fetch(episodes[i]).then(res=>res.json())
       .then(data=> dispatch({type: EPISODES, payload: data}))
     }
   }
